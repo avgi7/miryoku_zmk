@@ -1,0 +1,17 @@
+# Copyright 2023 Manna Harbour
+# https://github.com/manna-harbour/miryoku
+
+name: 'Aurora corne encoders and mouse'
+on: workflow_dispatch
+jobs:
+  build:
+    uses: ./.github/workflows/main.yml
+    secrets: inherit
+    with:
+      board: '["nice_nano_v2"]'
+      shield: '["splitkb_aurora_corne_left","splitkb_aurora_corne_right"]'
+      nav: '["invertedT"]'
+      layers: '["flip"]'
+      custom_config: '["#define MIRYOKU_KLUDGE_MOUSEKEYSPR"]'
+      kconfig: '["CONFIG_ZMK_SLEEP=y\nCONFIG_ZMK_DISPLAY=y\nCONFIG_ZMK_MOUSE=y\nCONFIG_ZMK_WIDGET_BATTERY_STATUS_SHOW_PERCENTAGE=y\nCONFIG_ZMK_WIDGET_WPM_STATUS=y\nCONFIG_EC11=y\nCONFIG_EC11_TRIGGER_GLOBAL_THREAD=y"]'
+      branches: '["zmkfirmware/zmk/main  petejohanson/zmk/tree/feat/pointers-move-scroll"]'
