@@ -50,7 +50,7 @@ jobs:
   main:
     runs-on: ubuntu-latest
     container:
-      image: zmkfirmware/zmk-build-arm:3.5
+      image: zmkfirmware/zmk-build-arm:stable
     strategy:
       fail-fast: false
       matrix:
@@ -238,7 +238,7 @@ jobs:
           zmk=`echo "$branches" | cut -d ' ' -f 1`
           if [ -z "$zmk" ]
           then
-            zmk='zmkfirmware/zmk/main'
+            zmk='zmkfirmware/zmk/v0.3-branch'
           fi
           user=`echo "$zmk" | cut -f 1 -d '/'`
           repo=`echo "$zmk" | cut -f 2 -d '/'`
@@ -314,15 +314,11 @@ jobs:
 
           echo "::group::setup"
           cd "${GITHUB_WORKSPACE}/zmk"
-          # Καθαρίζουμε τυχόν προηγούμενα configs για να μην μπερδεύεται το init
-          rm -rf .west
-          # Χρησιμοποιούμε το πλήρες URL σε εισαγωγικά για σιγουριά
-          west init -m "https://github.com" --mr v0.3.0
-          west update
-          west zephyr-export
+          west $west_debug init -l app
+          west $west_debug update
+          west $west_debug zephyr-export
           echo "::endgroup::"
 
-          
 
           echo "::group::build"
           log='build.log'
