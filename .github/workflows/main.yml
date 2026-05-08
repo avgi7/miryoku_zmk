@@ -314,10 +314,12 @@ jobs:
 
           echo "::group::setup"
           cd "${GITHUB_WORKSPACE}/zmk"
-          west $west_debug init -m https://github.com --mr v0.3.0 app
+          # Προσοχή: Το URL πρέπει να είναι συνεχόμενο χωρίς κενά
+          west $west_debug init -m https://github.com --mr v0.3.0
           west $west_debug update
           west $west_debug zephyr-export
           echo "::endgroup::"
+          
 
           echo "::group::build"
           log='build.log'
