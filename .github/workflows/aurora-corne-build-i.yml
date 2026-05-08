@@ -5,7 +5,7 @@ name: 'Aurora corne encoders and mouse'
 on: workflow_dispatch
 jobs:
   build:
-    uses: ./.github/workflows/v0.3.yml
+    uses: ./.github/workflows/main.yml
     secrets: inherit
     with:
       board: '["nice_nano_v2"]'
