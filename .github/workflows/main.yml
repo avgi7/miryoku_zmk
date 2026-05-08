@@ -314,8 +314,8 @@ jobs:
 
           echo "::group::setup"
           cd "${GITHUB_WORKSPACE}/zmk"
-          west $west_debug init -l app
-          west $west_debug update -r v0.3.0
+          west $west_debug init -m https://github.com --mr v0.3.0 app
+          west $west_debug update
           west $west_debug zephyr-export
           echo "::endgroup::"
 
