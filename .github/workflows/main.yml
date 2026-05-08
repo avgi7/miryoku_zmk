@@ -50,7 +50,7 @@ jobs:
   main:
     runs-on: ubuntu-latest
     container:
-      image: zmkfirmware/zmk-build-arm:stable
+      image: zmkfirmware/zmk-build-arm:3.5
     strategy:
       fail-fast: false
       matrix:
@@ -315,7 +315,7 @@ jobs:
           echo "::group::setup"
           cd "${GITHUB_WORKSPACE}/zmk"
           west $west_debug init -l app
-          west $west_debug update
+          west $west_debug update -r v0.3.0
           west $west_debug zephyr-export
           echo "::endgroup::"
 
