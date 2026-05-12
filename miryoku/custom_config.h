@@ -32,7 +32,7 @@ U_NP,              U_NP,              U_BTN3,            U_BTN1,            U_BT
             tapping-term-ms = <180>;
             quick-tap-ms = <0>;
             flavor = "tap-preferred";
-            bindings = <&any>, <&any>; 
+            bindings = <&mmv>, <&mmv>; 
         };
 
         macros {
