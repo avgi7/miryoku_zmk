@@ -13,9 +13,10 @@ U_UND,             U_CUT,             U_CPY,             U_PST,             U_RD
 U_UND,             U_CUT,             U_CPY,             U_PST,             U_RDO,             U_RDO,             U_PST,             U_CPY,             U_CUT,             U_UND,             \
 U_NP,              U_NP,              U_BTN3,            U_BTN1,            U_BTN2,            U_BTN2,            U_BTN1,            U_BTN3,            U_NP,              U_NP
 
+
 / {
     behaviors {
-        // Για κανονικά πλήκτρα (kp)
+        // Κανονικό Auto-Shift ΜΟΝΟ για πλήκτρα (δεξί χέρι)
         as: auto_shift {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -24,37 +25,14 @@ U_NP,              U_NP,              U_BTN3,            U_BTN1,            U_BT
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
+    };
 
-        // Για Macros (χρησιμοποιώντας &none που στην v0.3 λειτουργεί ως μπαλαντέρ)
-        mas: macro_auto_shift {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <180>;
-            quick-tap-ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&mmv>, <&mmv>; 
-        };
-
-        macros {
-            // Obsidian Highlight: <u>
-        m_hi1: m_hi1 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <10>;
-            bindings = <&kp LT &kp U &kp GT>;
-        };
-                // Obsidian Highlight: </u>
-        m_hi2: m_hi2 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <10>;
-            bindings = <&kp LT &SLASH &kp U &kp GT>;
-        };
+    macros {
         // JavaScript Arrow Function: =>
         m_arrow: m_arrow {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <10>; // Small delay for stability in v0.3
+            wait-ms = <10>;
             bindings = <&kp EQUAL &kp GT>;
         };
 
@@ -73,10 +51,35 @@ U_NP,              U_NP,              U_BTN3,            U_BTN1,            U_BT
             wait-ms = <10>;
             bindings = <&kp EXCL &kp EQUAL>;
         };
-        m_py_def: m_py_def {
+
+        // Τα δικά σου macros για tags (π.χ. <html>)
+        m_hi1: m_hi1 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp D &kp E &kp F &kp SPACE &kp LPAR &kp RPAR &kp COLON &kp RET &kp TAB>;
+            wait-ms = <10>;
+            bindings = <&kp LT &kp M &kp A &kp R &kp K &kp GT>; 
+        };
+        m_hi2: m_hi2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            bindings = <&kp LT &kp SLASH &kp M &kp A &kp R &kp K &kp GT>; 
+        };
+
+        // ΠΑΡΑΜΕΤΡΟΠΟΙΗΜΕΝΟ MACRO (Αντικαθιστά το mas)
+        // Πατώντας το εκτελεί το 2ο όρισμα, κρατώντας το εκτελεί το 1ο όρισμα
+        mas: macro_auto_shift {
+            compatible = "zmk,behavior-macro-two-param";
+            #binding-cells = <2>;
+            wait-ms = <0>;
+            tap-ms = <0>;
+            bindings
+                = <&macro_param_2to1>
+                , <&macro_press &none MACRO_PLACEHOLDER> // Placeholder για v0.3
+                , <&macro_pause_for_release>
+                , <&macro_param_1to1>
+                , <&macro_tap &none MACRO_PLACEHOLDER>
+                ;
         };
     };
 };
