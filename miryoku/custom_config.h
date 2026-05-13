@@ -33,7 +33,7 @@ U_NP,              U_NP,              U_BTN3,            U_BTN1,            U_BT
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <10>;
-            bindings = <&kp EQUAL &kp GREATER_THAN>; // Διορθώθηκε από GT σε GREATER_THAN
+            bindings = <&kp EQUAL>, <&kp GREATER_THAN>; // Χωρισμένα με κόμμα και ξεχωριστές αγκύλες
         };
 
         // JavaScript Strict Equality: ===
@@ -41,7 +41,7 @@ U_NP,              U_NP,              U_BTN3,            U_BTN1,            U_BT
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <10>;
-            bindings = <&kp EQUAL &kp EQUAL &kp EQUAL>;
+            bindings = <&kp EQUAL>, <&kp EQUAL>, <&kp EQUAL>;
         };
 
         // JS/Python Not Equal: !=
@@ -49,23 +49,23 @@ U_NP,              U_NP,              U_BTN3,            U_BTN1,            U_BT
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <10>;
-            bindings = <&kp EXCLAMATION &kp EQUAL>;
+            bindings = <&kp EXCLAMATION>, <&kp EQUAL>;
         };
 
-        // Obsidian/HTML Tags: <html> (hi1)
+        // HTML/Obsidian Tag: <html>
         m_hi1: m_hi1 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <10>;
-            bindings = <&kp LESS_THAN &kp M &kp A &kp R &kp K &kp GREATER_THAN>; 
+            bindings = <&kp LESS_THAN>, <&kp M>, <&kp A>, <&kp R>, <&kp K>, <&kp GREATER_THAN>;
         };
 
-        // Obsidian/HTML Tags: </html> (hi2)
+        // HTML/Obsidian Tag: </html>
         m_hi2: m_hi2 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <10>;
-            bindings = <&kp LESS_THAN &kp SLASH &kp M &kp A &kp R &kp K &kp GREATER_THAN>; 
+            bindings = <&kp LESS_THAN>, <&kp SLASH>, <&kp M>, <&kp A>, <&kp R>, <&kp K>, <&kp GREATER_THAN>;
         };
     };
 };
