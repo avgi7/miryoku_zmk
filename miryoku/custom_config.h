@@ -27,7 +27,7 @@ U_NP,              U_NP,              U_BTN3,            U_BTN1,            U_BT
         };
     };
 
-    macros {
+  /*   macros {
         // JavaScript Arrow Function: =>
         m_arrow: m_arrow {
             compatible = "zmk,behavior-macro";
@@ -81,14 +81,14 @@ U_NP,              U_NP,              U_BTN3,            U_BTN1,            U_BT
                 , <&macro_tap &none MACRO_PLACEHOLDER>
                 ;
         };
-    };
+    };  */
 };
 
 
 
 #define MIRYOKU_LAYER_SYM \
-&m_not_eq,        &m_arrow,            &mas m_hi2 m_hi1,  &m_py_def,     &as PRCNT TILDE,      &as PIPE BSLH,     &as MINUS UNDER,    &as CARET AMPS,   &as EXCL QUESTION,   &as SQT DQT,     \
-&m_eq3,           &kp LALT,            &kp LCTRL,         &none,         &none,                &as PLUS EQUAL,    &as RPAR LPAR,      &as RBKT LBKT,    &as GT LT,           &as RBRC LBRC,   \
+&none,            &none,               &none,             &none,         &as PRCNT TILDE,      &as PIPE BSLH,     &as MINUS UNDER,    &as CARET AMPS,   &as EXCL QUESTION,   &as SQT DQT,     \
+&none,            &kp LALT,            &kp LCTRL,         &none,         &none,                &as PLUS EQUAL,    &as RPAR LPAR,      &as RBKT LBKT,    &as GT LT,           &as RBRC LBRC,   \
 &none,            &none,               &none,             &none,         &none,                &as AT DLLR,       &as ASTRK HASH,     &as COMMA SEMI,   &as DOT COLON,       &as GRAVE SLASH, \
 U_NP,             U_NP,                &none,             &none,         &none,                &kp BSPC,          &kp SPACE,          &kp DEL,          U_NP,                U_NP
 
