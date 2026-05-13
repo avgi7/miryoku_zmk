@@ -26,48 +26,6 @@ U_NP,              U_NP,              U_BTN3,            U_BTN1,            U_BT
             bindings = <&kp>, <&kp>;
         };
     };
-
-    macros {
-        // JavaScript Arrow Function: =>
-        m_arrow: m_arrow {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <10>;
-            bindings = <&kp EQUAL>, <&kp GREATER_THAN>; // Χωρισμένα με κόμμα και ξεχωριστές αγκύλες
-        };
-
-        // JavaScript Strict Equality: ===
-        m_eq3: m_eq3 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <10>;
-            bindings = <&kp EQUAL>, <&kp EQUAL>, <&kp EQUAL>;
-        };
-
-        // JS/Python Not Equal: !=
-        m_not_eq: m_not_eq {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <10>;
-            bindings = <&kp EXCLAMATION>, <&kp EQUAL>;
-        };
-
-        // HTML/Obsidian Tag: <html>
-        m_hi1: m_hi1 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <10>;
-            bindings = <&kp LESS_THAN>, <&kp M>, <&kp A>, <&kp R>, <&kp K>, <&kp GREATER_THAN>;
-        };
-
-        // HTML/Obsidian Tag: </html>
-        m_hi2: m_hi2 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <10>;
-            bindings = <&kp LESS_THAN>, <&kp SLASH>, <&kp M>, <&kp A>, <&kp R>, <&kp K>, <&kp GREATER_THAN>;
-        };
-    };
 };
 
 
