@@ -4,3 +4,45 @@
 #include "../miryoku/custom_config.h"
 #include "../miryoku/mapping/42/corne.h"
 #include "../miryoku/miryoku.dtsi"
+
+/ {
+    // ... (υπάρχοντα behaviors ή keymaps του Corne)
+
+    macros {
+        m_arrow: m_arrow {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            bindings = <&kp EQUAL>, <&kp GREATER_THAN>;
+        };
+
+        m_eq3: m_eq3 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            bindings = <&kp EQUAL>, <&kp EQUAL>, <&kp EQUAL>;
+        };
+
+        m_not_eq: m_not_eq {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            bindings = <&kp EXCLAMATION>, <&kp EQUAL>;
+        };
+
+        m_hi1: m_hi1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            bindings = <&kp LESS_THAN>, <&kp M>, <&kp A>, <&kp R>, <&kp K>, <&kp GREATER_THAN>;
+        };
+
+        m_hi2: m_hi2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            bindings = <&kp LESS_THAN>, <&kp SLASH>, <&kp M>, <&kp A>, <&kp R>, <&kp K>, <&kp GREATER_THAN>;
+        };
+    };
+};
+
