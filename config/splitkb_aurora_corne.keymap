@@ -43,14 +43,6 @@
             wait-ms = <10>;
             bindings = <&kp LESS_THAN>, <&kp SLASH>, <&kp U>, <&kp GREATER_THAN>;
         };
-
-        mas: macro_auto_shift {
-            compatible = "zmk,behavior-macro-two-param";
-            #binding-cells = <2>;
-            wait-ms = <0>;
-            tap-ms = <0>;
-            bindings= <&none>, <&none>;
-        };
     };
 };
 
