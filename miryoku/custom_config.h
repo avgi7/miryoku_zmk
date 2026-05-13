@@ -27,7 +27,7 @@ U_NP,              U_NP,              U_BTN3,            U_BTN1,            U_BT
         };
     };
 
-  /*   macros {
+    macros {
         // JavaScript Arrow Function: =>
         m_arrow: m_arrow {
             compatible = "zmk,behavior-macro";
@@ -52,7 +52,7 @@ U_NP,              U_NP,              U_BTN3,            U_BTN1,            U_BT
             bindings = <&kp EXCL &kp EQUAL>;
         };
 
-        // Τα δικά σου macros για tags (π.χ. <html>)
+        // Obsidian/HTML Tags: <html> (hi1) και </html> (hi2)
         m_hi1: m_hi1 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -65,29 +65,13 @@ U_NP,              U_NP,              U_BTN3,            U_BTN1,            U_BT
             wait-ms = <10>;
             bindings = <&kp LT &kp SLASH &kp M &kp A &kp R &kp K &kp GT>; 
         };
-
-        // ΠΑΡΑΜΕΤΡΟΠΟΙΗΜΕΝΟ MACRO (Αντικαθιστά το mas)
-        // Πατώντας το εκτελεί το 2ο όρισμα, κρατώντας το εκτελεί το 1ο όρισμα
-        mas: macro_auto_shift {
-            compatible = "zmk,behavior-macro-two-param";
-            #binding-cells = <2>;
-            wait-ms = <0>;
-            tap-ms = <0>;
-            bindings
-                = <&macro_param_2to1>
-                , <&macro_press &none MACRO_PLACEHOLDER> // Placeholder για v0.3
-                , <&macro_pause_for_release>
-                , <&macro_param_1to1>
-                , <&macro_tap &none MACRO_PLACEHOLDER>
-                ;
-        };
-    };  */
+    };
 };
 
 
 
 #define MIRYOKU_LAYER_SYM \
-&none,            &none,               &none,             &none,         &as PRCNT TILDE,      &as PIPE BSLH,     &as MINUS UNDER,    &as CARET AMPS,   &as EXCL QUESTION,   &as SQT DQT,     \
+&m_arrow,         &m_not_eq,           &m_hi1,            &m_hi2,        &as PRCNT TILDE,      &as PIPE BSLH,     &as MINUS UNDER,    &as CARET AMPS,   &as EXCL QUESTION,   &as SQT DQT,     \
 &none,            &kp LALT,            &kp LCTRL,         &none,         &none,                &as PLUS EQUAL,    &as RPAR LPAR,      &as RBKT LBKT,    &as GT LT,           &as RBRC LBRC,   \
 &none,            &none,               &none,             &none,         &none,                &as AT DLLR,       &as ASTRK HASH,     &as COMMA SEMI,   &as DOT COLON,       &as GRAVE SLASH, \
 U_NP,             U_NP,                &none,             &none,         &none,                &kp BSPC,          &kp SPACE,          &kp DEL,          U_NP,                U_NP
