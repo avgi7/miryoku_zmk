@@ -50,6 +50,16 @@
             wait-ms = <10>;
             bindings = <&kp HASH>, <&kp HASH>, <&kp HASH>, <&kp HASH>, <&kp SPACE>, <&kp S>, <&kp O>, <&kp U>, <&kp R>, <&kp  C>, <&kp E>, <&kp CARET>;
         };
+    behaviors {
+        // Hold-tap behavior: tap sends m_hi_tap, hold sends m_hi_hold
+        m_hi: auto_shift_hi {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&m_m_hi2>, <&m_m_hi1>;
+        };
     };
 };
 
