@@ -33,6 +33,6 @@ U_NP,              U_NP,              U_BTN3,            U_BTN1,            U_BT
 #define MIRYOKU_LAYER_SYM \
 &m_arrow,         &m_not_eq,           &m_hi2,           &m_hi1,         &as PRCNT TILDE,      &as PIPE BSLH,     &as MINUS UNDER,    &as CARET AMPS,   &as QUESTION EXCL,   &as SQT DQT,     \
 &none,            &kp LALT,            &kp LCTRL,         &none,         &m_s4,                &as PLUS EQUAL,    &as RPAR LPAR,      &as RBKT LBKT,    &as GT LT,           &as RBRC LBRC,   \
-&none,            &none,               &none,             &none,         &m_hi,                &as AT DLLR,       &as ASTRK HASH,     &as COMMA SEMI,   &as DOT COLON,       &as GRAVE SLASH, \
+&none,            &none,               &none,             &none,         &m_hi 0 0,                &as AT DLLR,       &as ASTRK HASH,     &as COMMA SEMI,   &as DOT COLON,       &as GRAVE SLASH, \
 U_NP,             U_NP,                &none,             &none,         &none,                &kp BSPC,          &kp SPACE,          &kp DEL,          U_NP,                U_NP
 
