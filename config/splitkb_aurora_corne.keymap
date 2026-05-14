@@ -92,7 +92,7 @@
             flavor = "tap-preferred";
             bindings = <&m_s3>, <&m_s4>;
         };
-        m_lg: as_source34 {
+        m_lg: as_line_grave {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
