@@ -25,13 +25,6 @@ U_NP,              U_NP,              U_BTN3,            U_BTN1,            U_BT
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
-        mas: macro_tap_hold {
-             compatible = "zmk,behavior-hold-tap";
-             #binding-cells = <2>;           // Accepts 2 arguments from the keymap
-             flavor = "hold-preferred";
-             tapping-term-ms = <200>;
-             bindings = <&macro_hold_param>, <&macro_tap_param>; // Dynamic routing
-        };
     };
 };
 
@@ -39,7 +32,7 @@ U_NP,              U_NP,              U_BTN3,            U_BTN1,            U_BT
 
 #define MIRYOKU_LAYER_SYM \
 &m_arrow,         &m_not_eq,           &m_hi2,           &m_hi1,         &as PRCNT TILDE,      &as PIPE BSLH,     &as MINUS UNDER,    &as CARET AMPS,   &as QUESTION EXCL,   &as SQT DQT,     \
-&none,            &kp LALT,            &kp LCTRL,         &m_s4,         &mas m_hi2 m_hi1,     &as PLUS EQUAL,    &as RPAR LPAR,      &as RBKT LBKT,    &as GT LT,           &as RBRC LBRC,   \
+&none,            &kp LALT,            &kp LCTRL,         &m_s4,         M_AS(m_hi1, m_hi2),   &as PLUS EQUAL,    &as RPAR LPAR,      &as RBKT LBKT,    &as GT LT,           &as RBRC LBRC,   \
 &none,            &none,               &none,             &none,         &none,                &as AT DLLR,       &as ASTRK HASH,     &as COMMA SEMI,   &as DOT COLON,       &as GRAVE SLASH, \
 U_NP,             U_NP,                &none,             &none,         &none,                &kp BSPC,          &kp SPACE,          &kp DEL,          U_NP,                U_NP
 
