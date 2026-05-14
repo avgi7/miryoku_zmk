@@ -50,5 +50,11 @@
             bindings = <&kp HASH>, <&kp HASH>, <&kp HASH>, <&kp HASH>, <$&kp SPACE>, <&kp S>, <&kp O>, <&kp U>, <&kp R>, <&kp  C>, <&kp E>, <&kp CARET>;
         };
     };
+    behaviors {
+        ZMK_HOLD_TAP_BY_NAME(mas, &none, &none,
+            flavor = "tap-preferred";
+            tapping-term-ms = <135>;
+        )
+    };
 };
 
