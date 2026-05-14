@@ -30,7 +30,7 @@
             wait-ms = <10>;
             bindings = <&kp EXCLAMATION>, <&kp EQUAL>;
         };
-
+             // .... highlight obsidian
         m_hi1: m_hi1 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -44,11 +44,33 @@
             wait-ms = <10>;
             bindings = <&kp LESS_THAN>, <&kp SLASH>, <&kp U>, <&kp GREATER_THAN>;
         };
+
+             // .... source obsidian
         m_s4: m_s4 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <10>;
             bindings = <&kp HASH>, <&kp HASH>, <&kp HASH>, <&kp HASH>, <&kp SPACE>, <&kp S>, <&kp O>, <&kp U>, <&kp R>, <&kp  C>, <&kp E>, <&kp CARET>;
+        };
+        m_s3: m_s3 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            bindings = <&kp HASH>, <&kp HASH>, <&kp HASH>, <&kp SPACE>, <&kp S>, <&kp O>, <&kp U>, <&kp R>, <&kp  C>, <&kp E>, <&kp CARET>;
+        };
+
+             // .... grave line obsidian
+        m_g: m_g {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            bindings = <&kp GRAVE>, <&kp GRAVE>, <&kp GRAVE>, <&kp ENTER>, <&kp ENTER>, <&kp ENTER>, <&kp GRAVE>, <&kp GRAVE>, <&kp GRAVE>;
+        };
+        m_li: m_li {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            bindings = <&kp UNDER>, <&kp UNDER>, <&kp UNDER>, <&kp ENTER>;
         };
     };
 
@@ -61,6 +83,22 @@
             quick-tap-ms = <0>;
             flavor = "tap-preferred";
             bindings = <&m_hi2>, <&m_hi1>;
+        };
+        m_s: as_source34 {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&m_s3>, <&m_s4>;
+        };
+        m_lg: as_source34 {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&m_li>, <&m_g>;
         };
     };
 };
