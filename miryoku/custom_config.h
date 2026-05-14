@@ -28,7 +28,7 @@ U_NP,              U_NP,              U_BTN3,            U_BTN1,            U_BT
     };
 };
 
-/{
+
 / {
     behaviors {
         // 2. Το Macro Auto-Shift του urob απομονωμένο στο δικό του block
