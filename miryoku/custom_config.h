@@ -25,6 +25,10 @@ U_NP,              U_NP,              U_BTN3,            U_BTN1,            U_BT
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
+        ZMK_HOLD_TAP_BY_NAME(mas, &none, &none,
+            flavor = "tap-preferred";
+            tapping-term-ms = <135>;
+        )
     };
 };
 
