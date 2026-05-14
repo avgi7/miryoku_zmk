@@ -30,14 +30,6 @@ U_NP,              U_NP,              U_BTN3,            U_BTN1,            U_BT
 
 
 
-        // 2. Το Macro Auto-Shift του urob απομονωμένο στο δικό του block
-      ZMK_HOLD_TAP_BY_NAME(mas, &none, &none,
-            flavor = "tap-preferred";
-            tapping-term-ms = <135>;
-        )
-
-
-
 #define MIRYOKU_LAYER_SYM \
 &m_arrow,         &m_not_eq,           &m_hi2,           &m_hi1,         &as PRCNT TILDE,      &as PIPE BSLH,     &as MINUS UNDER,    &as CARET AMPS,   &as QUESTION EXCL,   &as SQT DQT,     \
 &none,            &kp LALT,            &kp LCTRL,         &m_s4,         &mas m_hi2 m_hi1,     &as PLUS EQUAL,    &as RPAR LPAR,      &as RBKT LBKT,    &as GT LT,           &as RBRC LBRC,   \
