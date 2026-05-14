@@ -51,7 +51,7 @@
             bindings = <&kp HASH>, <&kp HASH>, <&kp HASH>, <&kp HASH>, <&kp SPACE>, <&kp S>, <&kp O>, <&kp U>, <&kp R>, <&kp  C>, <&kp E>, <&kp CARET>;
         };
     };
-};
+
     behaviors {
         // Hold-tap behavior: tap sends m_hi_tap, hold sends m_hi_hold
         m_hi: auto_shift_hi {
@@ -63,5 +63,5 @@
             bindings = <&m_hi2>, <&m_hi1>;
         };
     };
-
+};
 
