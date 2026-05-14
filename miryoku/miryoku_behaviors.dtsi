@@ -17,5 +17,13 @@
       flavor = "tap-preferred";
       bindings = <&mo>, <&kp>;
     };
+    mas: mas {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      tapping-term-ms = <200>;
+      quick-tap-ms = <0>;
+      flavor = "tap-preferred";
+      bindings = <&macro_press>, <&macro_tap>; // Το &none επιτρέπει την εισαγωγή macros
+    };
   };
 };
