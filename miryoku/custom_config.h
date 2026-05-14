@@ -25,6 +25,13 @@ U_NP,              U_NP,              U_BTN3,            U_BTN1,            U_BT
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
+        mas: macro_tap_hold {
+             compatible = "zmk,behavior-hold-tap";
+             #binding-cells = <2>;           // Accepts 2 arguments from the keymap
+             flavor = "hold-preferred";
+             tapping-term-ms = <200>;
+             bindings = <&macro_hold_param>, <&macro_tap_param>; // Dynamic routing
+        };
     };
 };
 
