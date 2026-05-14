@@ -13,5 +13,5 @@ jobs:
       layers: '["flip"]'
       custom_config: '["#define MIRYOKU_KLUDGE_SOFT_OFF"]'
       kconfig: '["CONFIG_ZMK_PM_SOFT_OFF=y\nCONFIG_ZMK_DISPLAY=y\nCONFIG_ZMK_POINTING=y\nCONFIG_ZMK_WIDGET_BATTERY_STATUS_SHOW_PERCENTAGE=y\nCONFIG_ZMK_WIDGET_WPM_STATUS=y\nCONFIG_EC11=y\nCONFIG_EC11_TRIGGER_GLOBAL_THREAD=y"]'
-      branches: '["zmkfirmware/zmk/v0.3 urob/zmk-helpers/v0.3"]'
+      branches: '["zmkfirmware/zmk/v0.3 urob/zmk-helpers/v2"]'
 
