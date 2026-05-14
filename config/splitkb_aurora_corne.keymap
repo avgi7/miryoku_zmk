@@ -5,6 +5,11 @@
 #include "../miryoku/mapping/42/corne.h"
 #include "../miryoku/miryoku.dtsi"
 
+ZMK_HOLD_TAP_BY_NAME(mas, &none, &none,
+    flavor = "tap-preferred";
+    tapping-term-ms = <135>;
+)
+
 / {
     // ... (υπάρχοντα behaviors ή keymaps του Corne)
 
