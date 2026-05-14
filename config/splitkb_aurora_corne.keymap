@@ -48,7 +48,7 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <10>;
-            bindings = <&kp HASH>, <&kp HASH>, <&kp HASH>, <&kp HASH>, <$&kp SPACE>, <&kp S>, <&kp O>, <&kp U>, <&kp R>, <&kp  C>, <&kp E>, <&kp CARET>;
+            bindings = <&kp HASH>, <&kp HASH>, <&kp HASH>, <&kp HASH>, <&kp SPACE>, <&kp S>, <&kp O>, <&kp U>, <&kp R>, <&kp  C>, <&kp E>, <&kp CARET>;
         };
     };
 };
