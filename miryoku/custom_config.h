@@ -1,6 +1,24 @@
 // Copyright 2021 Manna Harbour
 // https://github.com/manna-harbour/miryoku
 
+// Ensure we are applying this specific fix to the Corne keyboard
+#if defined(MIRYOKU_KEYBOARD_CORNE)
+
+/ {
+    // Delete the original external power switch node if it exists
+    /delete-node/ ext-power;
+
+    // Re-create the external power node bound to pin P0.29
+    ext-power {
+        compatible = "zmk,ext-power-generic";
+        label = "OLED_REMAP_POWER";
+        control-gpios = <&gpio0 29 GPIO_ACTIVE_HIGH>;
+        init-delay-ms = <50>;
+    };
+};
+
+#endif
+
 #define MIRYOKU_LAYER_NAV \
 &kp END,          &kp PG_DN,         &kp PG_UP,         &kp HOME,           &kp INS,           U_NA,              &u_to_U_BASE,      &u_to_U_EXTRA,     &u_to_U_TAP,       U_BOOT,            \
 &kp LEFT,          &kp DOWN,          &kp UP,            &kp RIGHT,         &u_caps_word,      U_NA,              &kp LSHFT,         &kp LCTRL,         &kp LALT,          &kp LGUI,          \
