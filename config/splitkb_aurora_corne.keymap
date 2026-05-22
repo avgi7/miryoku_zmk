@@ -6,8 +6,6 @@
 #include "../miryoku/miryoku.dtsi"
 
 
-// Ensure we are applying this specific fix to the Corne keyboard
-#if defined(MIRYOKU_KEYBOARD_CORNE)
 
 / {
     // Delete the original external power switch node if it exists
@@ -20,12 +18,7 @@
         control-gpios = <&gpio0 29 GPIO_ACTIVE_HIGH>;
         init-delay-ms = <50>;
     };
-};
 
-#endif
-
-
-/ {
     // ... (υπάρχοντα behaviors ή keymaps του Corne)
 
     macros {
