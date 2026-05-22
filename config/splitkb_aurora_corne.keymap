@@ -64,7 +64,7 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <10>;
-            bindings = <&kp GRAVE>, <&kp GRAVE>, <&kp GRAVE>, <&kp ENTER>, <&kp ENTER>, <&kp ENTER>, <&kp GRAVE>, <&kp GRAVE>, <&kp GRAVE>;
+            bindings = <&kp GRAVE>, <&kp GRAVE>, <&kp GRAVE>, <&kp ENTER>, <&kp ENTER>;
         };
         m_li: m_li {
             compatible = "zmk,behavior-macro";
